@@ -9,9 +9,10 @@ Este taller está diseñado para personas que deseen iniciarse en el mundo de lo
 
 ## 👨‍🏫 Instructor
 **Jorge Ulloa Roa**
-* Geógrafo especialista en Big Data Geoespacial.
-* Experiencia liderando análisis espacial en el **Servicio Electoral (SERVEL)**.
-* Actualmente parte del equipo de la Infraestructura de Datos Espaciales del **Ministerio del Medio Ambiente (IDE-MMA)**.
+* Geógrafo con más de 8 años de experiencia en análisis espacial y tecnología.
+* Lideró el desarrollo del primer padrón georreferenciado del **Servel**.
+* Especialista en el **Ministerio del Medio Ambiente**, impulsando el análisis de datos para políticas públicas.
+* Fundador de **ConMapas**, comunidad dedicada a la vanguardia visual del territorio.
 
 ## 📖 Programa del Curso
 

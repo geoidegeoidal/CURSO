@@ -762,56 +762,7 @@
         animate();
 
 
-        /**
-         * EFECTO 2: TEXT DECODING (Matrix Style)
-         * "Desencripta" el texto al entrar en pantalla.
-         */
-        const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
 
-        const decodeText = (target) => {
-            let iterations = 0;
-            const originalText = target.dataset.value;
-
-            clearInterval(target.interval); // Limpiar intervalo previo si existe
-
-            target.interval = setInterval(() => {
-                target.innerText = originalText.split("")
-                    .map((letter, index) => {
-                        if (index < iterations) {
-                            return originalText[index];
-                        }
-                        // Use simple dashes or empty space for less chaos, or just keep letters but slower
-                        // Using a fixed char like '_' reduces the flashing
-                        return Math.random() > 0.5 ? letters[Math.floor(Math.random() * 36)] : '_';
-                    })
-                    .join("");
-
-                if (iterations >= originalText.length) {
-                    clearInterval(target.interval);
-                    target.innerText = originalText; // Ensure final state is clean
-                }
-
-                iterations += 1; // Velocidad de resolución más rápida (menos tiempo en estado "glitch")
-            }, 70); // Intervalo más lento (menos frames por segundo = menos mareo)
-        }
-
-        // Observer para disparar efecto al scrollear
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    decodeText(entry.target);
-                    observer.unobserve(entry.target); // SOLO UNA VEZ
-                }
-            });
-        }, { threshold: 0.5 }); // Disparar cuando el 50% del elemento es visible
-
-        // Seleccionar elementos a aplicar efecto (h2, h3 principales)
-        document.querySelectorAll('h2, .cyber-card h3').forEach(header => {
-            // Guardar texto original en data-value
-            header.dataset.value = header.innerText;
-            observer.observe(header);
-            // REMOVED HOVER LISTENER TO AVOID DIZZINES
-        });
 
         /**
          * EFECTO 3: CYBER-INJECTION CTA TRANSITION

@@ -10,7 +10,7 @@ Este taller está diseñado para personas que deseen iniciarse en el mundo de lo
 ## 👨‍🏫 Instructor
 **Jorge Ulloa Roa**
 * Geógrafo con más de 8 años de experiencia en análisis espacial y tecnología.
-* Lideró el desarrollo del primer padrón georreferenciado del **Servel**.
+* Parte del primer equipo de geógraf@s que desarrolló la metodología de georreferenciación del padrón electoral (**Servel**).
 * Especialista en el **Ministerio del Medio Ambiente**, impulsando el análisis de datos para políticas públicas.
 * Fundador de **ConMapas**, comunidad dedicada a la vanguardia visual del territorio.
 

@@ -697,26 +697,27 @@
                         if (index < iterations) {
                             return originalText[index];
                         }
-                        return letters[Math.floor(Math.random() * 36)];
+                        // Use simple dashes or empty space for less chaos, or just keep letters but slower
+                        // Using a fixed char like '_' reduces the flashing
+                        return Math.random() > 0.5 ? letters[Math.floor(Math.random() * 36)] : '_';
                     })
                     .join("");
 
                 if (iterations >= originalText.length) {
                     clearInterval(target.interval);
+                    target.innerText = originalText; // Ensure final state is clean
                 }
 
-                iterations += 1 / 2; // Velocidad de desencriptado
-            }, 30);
+                iterations += 1; // Velocidad de resolución más rápida (menos tiempo en estado "glitch")
+            }, 70); // Intervalo más lento (menos frames por segundo = menos mareo)
         }
 
         // Observer para disparar efecto al scrollear
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    // Si ya se decodificó una vez, no repetir (opcional, aquí lo repetimos para efecto)
                     decodeText(entry.target);
-                    // Dejar de observar si solo queremos que pase una vez:
-                    // observer.unobserve(entry.target);
+                    observer.unobserve(entry.target); // SOLO UNA VEZ
                 }
             });
         }, { threshold: 0.5 }); // Disparar cuando el 50% del elemento es visible
@@ -726,11 +727,7 @@
             // Guardar texto original en data-value
             header.dataset.value = header.innerText;
             observer.observe(header);
-
-            // Efecto Hover extra para interactividad
-            header.addEventListener("mouseover", event => {
-                decodeText(event.target);
-            });
+            // REMOVED HOVER LISTENER TO AVOID DIZZINES
         });
 
     </script>

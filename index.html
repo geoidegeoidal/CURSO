@@ -832,9 +832,9 @@
                 // 2. Secuencia de textos
                 const steps = [
                     { time: 0, text: "> ESTABLISHING SECURE CONNECTION..." },
-                    { time: 400, text: "> VERIFYING USER PROTOCOLS..." },
-                    { time: 800, text: "> BYPASSING FIREWALL..." },
-                    { time: 1200, text: "> ACCESS GRANTED." }
+                    { time: 800, text: "> VERIFYING USER PROTOCOLS..." },
+                    { time: 1800, text: "> BYPASSING FIREWALL..." },
+                    { time: 2800, text: "> ACCESS GRANTED." }
                 ];
 
                 steps.forEach(step => {
@@ -843,12 +843,12 @@
                     }, step.time);
                 });
 
-                // 3. Barra de progreso
+                // 3. Barra de progreso (Más lenta para acompañar)
                 setTimeout(() => {
                     fill.style.width = '100%';
-                }, 100);
+                }, 500);
 
-                // 4. Redirección final
+                // 4. Redirección final (3.5 segundos total)
                 setTimeout(() => {
                     window.open(targetUrl, '_blank');
 
@@ -859,8 +859,9 @@
                         overlay.style.opacity = '1';
                         fill.style.width = '0%';
                     }, 500);
-                }, 1600);
+                }, 3500);
             });
+        });
         });
 
     </script>

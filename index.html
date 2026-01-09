@@ -251,6 +251,15 @@
             color: var(--text-dim);
         }
 
+        .usd-conversion {
+            display: block;
+            font-size: 1rem;
+            color: var(--text-dim);
+            font-family: 'Share Tech Mono', monospace;
+            margin-top: -0.5rem;
+            opacity: 0.8;
+        }
+
         footer {
             border-top: 1px solid #1e293b;
             padding: 3rem;
@@ -503,11 +512,13 @@
                 <div>
                     <h3 style="color: #fff; font-family: 'Share Tech Mono';">PÚBLICO GENERAL</h3>
                     <div class="price-value">$40.000 <span>CLP</span></div>
+                    <div class="usd-conversion">~ 42 USD</div>
                 </div>
                 <div>
                     <h3 style="color: var(--neon-green); font-family: 'Share Tech Mono';">ESTUDIANTES</h3>
                     <div class="price-value" style="color: var(--neon-green);">$30.000 <span>CLP</span></div>
-                    <p class="mono" style="font-size: 0.9rem;">Cupos limitados</p>
+                    <div class="usd-conversion" style="color: var(--neon-green); opacity: 0.7;">~ 32 USD</div>
+                    <p class="mono" style="font-size: 0.9rem; margin-top: 0.5rem;">Cupos limitados</p>
                 </div>
             </div>
 

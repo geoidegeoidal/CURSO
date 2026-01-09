@@ -406,7 +406,8 @@
                 font-size: 0.95rem;
             }
 
-            .tags span {
+            .tags span,
+            .tags a {
                 display: block;
                 text-align: center;
                 margin-right: 0;
@@ -441,10 +442,60 @@
                 font-size: 1.2rem;
             }
         }
+
+        /* OVERLAY TRANSICIÓN */
+        #cyber-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            z-index: 9999;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            font-family: 'Share Tech Mono', monospace;
+        }
+
+        .overlay-text {
+            color: var(--neon-green);
+            font-size: 1.5rem;
+            text-shadow: 0 0 10px var(--neon-green);
+            margin-bottom: 1rem;
+        }
+
+        .progress-bar {
+            width: 300px;
+            height: 4px;
+            background: #111;
+            position: relative;
+            margin-top: 2rem;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            background: var(--neon-cyan);
+            width: 0%;
+            box-shadow: 0 0 15px var(--neon-cyan);
+            transition: width 0.1s linear;
+        }
     </style>
 </head>
 
 <body>
+    <div id="cyber-overlay">
+        <div class="overlay-text" id="overlay-msg">> INITIALIZING...</div>
+        <div class="progress-bar">
+            <div class="progress-fill" id="progress-fill"></div>
+        </div>
+    </div>
+
     <canvas id="bg-canvas"></canvas>
 
     <header class="hero">
@@ -761,6 +812,59 @@
             observer.observe(header);
             // REMOVED HOVER LISTENER TO AVOID DIZZINES
         });
+
+    </script>
+    });
+
+
+    /**
+    * EFECTO 3: CYBER-INJECTION CTA TRANSITION
+    * Intercepta clics en botones de reserva y muestra secuencia de terminal.
+    */
+    document.querySelectorAll('.cta-btn').forEach(btn => {
+    btn.addEventListener('click', function(e) {
+    e.preventDefault(); // Detener navegación inmediata
+    const targetUrl = this.href;
+    const overlay = document.getElementById('cyber-overlay');
+    const msg = document.getElementById('overlay-msg');
+    const fill = document.getElementById('progress-fill');
+
+    // 1. Mostrar Overlay
+    overlay.style.display = 'flex';
+
+    // 2. Secuencia de textos
+    const steps = [
+    { time: 0, text: "> ESTABLISHING SECURE CONNECTION..." },
+    { time: 400, text: "> VERIFYING USER PROTOCOLS..." },
+    { time: 800, text: "> BYPASSING FIREWALL..." },
+    { time: 1200, text: "> ACCESS GRANTED." }
+    ];
+
+    steps.forEach(step => {
+    setTimeout(() => {
+    msg.innerText = step.text;
+    }, step.time);
+    });
+
+    // 3. Barra de progreso
+    setTimeout(() => {
+    fill.style.width = '100%';
+    }, 100);
+
+    // 4. Redirección final
+    setTimeout(() => {
+    window.open(targetUrl, '_blank');
+
+    // Resetear overlay (desvanecer)
+    overlay.style.opacity = '0';
+    setTimeout(() => {
+    overlay.style.display = 'none';
+    overlay.style.opacity = '1';
+    fill.style.width = '0%';
+    }, 500);
+    }, 1600);
+    });
+    });
 
     </script>
 </body>

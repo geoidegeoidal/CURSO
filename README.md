@@ -19,22 +19,28 @@ Este taller está diseñado para personas que deseen iniciarse en el mundo de lo
 El taller se divide en 3 sesiones intensivas:
 
 ### [SESIÓN 01] La Verdad Territorial
-* Instalación y configuración profesional de QGIS.
-* Soberanía de datos: Shapefiles y formatos abiertos.
-* La regla de los 5 archivos: Integridad de la evidencia.
-* Sistemas de Coordenadas: Entender el lienzo geográfico (EPSG).
+* Fundamentos y "Higiene" del dato.
+* Sistemas de Archivos: La regla de los 5 archivos obligatorios.
+* Coordenadas: Geográficas (Curvas) vs Proyectadas (Planas).
+* Entorno QGIS y navegación satelital.
 
-### [SESIÓN 02] Cruce de Datos & Revelación
-* De la tabla al mapa: "Joins" y uniones espaciales.
-* Limpieza de datos: Validar fuentes oficiales (Censo/IDE).
-* Filtros avanzados: Cómo interrogar al territorio.
-* Visualización de desigualdades y fenómenos "invisibles".
+### [SESIÓN 02] Inteligencia de Datos
+* Uniones de Tabla (Joins): Cruzar Excel con Mapas.
+* Limpieza de datos: Validar tipos de campo y atributos.
+* Exploración estadística de la tabla.
+* Espacialización de fenómenos sociales.
 
-### [SESIÓN 03] Diseño de Impacto
-* Simbología narrativa: El color como argumento.
-* Composición de mapas: Jerarquía visual y elementos de validación.
-* Exportación multiformato: Redes sociales vs. Informes técnicos.
-* Proyecto final aplicado.
+### [SESIÓN 03] Narrativa Visual
+* Simbología Categorizada: Cualidades y usos de suelo.
+* Simbología Graduada: Cantidades y mapas de calor (Coropletas).
+* Semántica del color: Diseño crítico vs mapas "bonitos".
+* Visualización de patrones de desigualdad.
+
+### [SESIÓN 04] Diseño de Impacto
+* Etiquetado Inteligente y Buffers de legibilidad.
+* Composición (Print Layout): Grilla, Norte, Escala, Fuente.
+* Estándares profesionales de reporte.
+* Exportación final: PDF Impreso vs PNG Digital.
 
 ## 💰 Inversión y Detalles
 * **Público General:** $40.000 CLP
